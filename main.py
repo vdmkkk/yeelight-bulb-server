@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from yeelight import *
 from typing import Literal
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 # bulb = Bulb('192.168.1.138')
