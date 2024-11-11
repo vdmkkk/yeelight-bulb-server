@@ -64,6 +64,20 @@ app = FastAPI()
 coords = [[55.734488, 37.605805], [55.781189, 37.595551], [55.749999, 37.594829], [55.708759, 37.706815],
           [55.687765, 37.528482], [55.798520, 37.602290], [55.768811, 37.698641], [55.785615, 37.465945]]
 
+origins=[
+    'http://localhost',
+    'http://localhost:8000',
+    'http://localhost:3000',
+    '*'
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=true,
+    allow_methods=['*'],
+    allow_headers=['*']
+)
 
 @app.get('/get_geo')
 async def get_geo():
